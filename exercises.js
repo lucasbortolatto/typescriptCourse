@@ -4,9 +4,6 @@ console.log(double(10));
 // Exercise 2
 var greet = function (name) {
     if (name === void 0) { name = "Ze"; }
-    if (name === undefined) {
-        name = "Max";
-    }
     console.log("Hello, " + name);
 };
 greet();
@@ -16,7 +13,7 @@ var numbers = [-3, 33, 38, 5];
 console.log(Math.min.apply(Math, numbers));
 // Exercise 4
 var newArray = [55, 20];
-Array.prototype.push.apply(newArray, numbers);
+newArray.push.apply(newArray, numbers);
 console.log(newArray);
 // Exercise 5
 var testResults = [3.89, 2.99, 1.38];
