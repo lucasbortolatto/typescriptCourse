@@ -1,11 +1,10 @@
-// Exercise 1
+// Exercise 1 - Class
 class Car{
     name: string;
-    acceleration: number;
+    acceleration: number = 0;
 
     constructor(name: string){
         this.name = name;
-        this.acceleration = 0;
     }
 
     accelerate(speed: number){
@@ -13,7 +12,7 @@ class Car{
     }
 
     honk(){
-            console.log("Toooooooooot!");
+        console.log("Toooooooooot!");
     }
     
 }
@@ -24,7 +23,7 @@ console.log(car.acceleration);
 car.accelerate(10);
 console.log(car.acceleration);
 
-// Exercise 2
+// Exercise 2 - Inheritance
 
 class BaseObject{
     width: number = 0;
@@ -35,24 +34,23 @@ class BaseObject{
         this.length = length;
     }
 
-    calcArea(){
-        return this.width * this.length;
-
-    }
-
 }
 
 class Rectangle extends BaseObject {
+  
+    calcArea(){
+    return this.width * this.length;
+    }
 
 }
 
 var rectangle = new Rectangle(2,2);
 console.log(rectangle.calcArea());
 
-// Exercise 3
+// Exercise 3 - Getters and Setters
 
 class Person {
-    _firstName: string = "";
+    private _firstName: string = "";
 
     getFirstName(){
         return this._firstName;

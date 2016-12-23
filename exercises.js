@@ -3,11 +3,11 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-// Exercise 1
+// Exercise 1 - Class
 var Car = (function () {
     function Car(name) {
-        this.name = name;
         this.acceleration = 0;
+        this.name = name;
     }
     Car.prototype.accelerate = function (speed) {
         this.acceleration = this.acceleration + speed;
@@ -22,7 +22,7 @@ car.honk();
 console.log(car.acceleration);
 car.accelerate(10);
 console.log(car.acceleration);
-// Exercise 2
+// Exercise 2 - Inheritance
 var BaseObject = (function () {
     function BaseObject(width, length) {
         this.width = 0;
@@ -30,9 +30,6 @@ var BaseObject = (function () {
         this.width = width;
         this.length = length;
     }
-    BaseObject.prototype.calcArea = function () {
-        return this.width * this.length;
-    };
     return BaseObject;
 }());
 var Rectangle = (function (_super) {
@@ -40,11 +37,14 @@ var Rectangle = (function (_super) {
     function Rectangle() {
         return _super.apply(this, arguments) || this;
     }
+    Rectangle.prototype.calcArea = function () {
+        return this.width * this.length;
+    };
     return Rectangle;
 }(BaseObject));
 var rectangle = new Rectangle(2, 2);
 console.log(rectangle.calcArea());
-// Exercise 3
+// Exercise 3 - Getters and Setters
 var Person = (function () {
     function Person() {
         this._firstName = "";
