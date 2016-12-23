@@ -73,5 +73,3 @@ person.setFirstName("Lu");
 console.log(person.getFirstName());
 person.setFirstName("Lucas");
 console.log(person.getFirstName());
-
-
